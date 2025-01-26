@@ -1,0 +1,83 @@
+:host {
+    display: block;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.scrollable-section {
+    background: linear-gradient(110deg, #5093d6, #eab464);
+    padding: 40px 20px;
+    min-height: 50vh;
+    max-height: 90vh; /* Limit max height */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.card.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    visibility: hidden;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #2e3d49;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.125rem;
+    color: #5c6b76;
+    line-height: 1.6;
+}
+
+.card-container h2, .card-container p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .scrollable-section {
+        padding: 20px;
+    }
+
+    .card-container {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
